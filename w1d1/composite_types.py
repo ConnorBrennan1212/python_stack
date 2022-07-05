@@ -44,9 +44,11 @@ course = ( "Python", "4 weeks", "spencer rauch" )
 
 print(course)
 
-course.append ( "pablo" ) 
+# course.append ( "pablo" ) 
 
-course [0] = "web fundamentals"
-# this append will not work because it is immutable
+# course [0] = "web fundamentals"
+# this append and reassignment will not work because it is immutable
+
+
 
 
