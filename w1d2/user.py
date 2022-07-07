@@ -1,7 +1,7 @@
 # user.py chained
 
 class User:
-    
+
     def __init__(self, first_name, last_name, email, age):
         self.first_name = first_name
         self.last_name = last_name
@@ -9,7 +9,6 @@ class User:
         self.age = age
         self.is_rewards_member = False
         self.gold_card_points = 0
-    
 
     def display_info(self):
         print(f"First: {self.first_name}")
@@ -35,8 +34,8 @@ class User:
         self.gold_card_points = self.gold_card_points - amount
         return self
 
+
 my_user = User('Connor', 'Brennan', 'Connorbrennan1212@gmail.com', 26)
 
 
 my_user.display_info().enroll().display_info().spend_points(50).display_info()
-
