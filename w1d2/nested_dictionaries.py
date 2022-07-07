@@ -59,41 +59,12 @@ iterateDictionary(students)
 # first_name - KB, last_name - Tonel
 
 def iterateDictionary2(key_name, some_list):
-    for list in range(len(students)):
-        names = ''
+    for list in range(len(some_list)):
         # print(list)
-        for x,y in students[list].items():
-            names += f'{y}'
-        print(names)
+        for x,y in some_list[list].items():
+            if key_name == x:
+                print(y)
 
 
 iterateDictionary2('first_name', students)
-
-
-dojo = {
-    'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
-    'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
-}
-printInfo(dojo)
-# output:
-7 LOCATIONS
-San Jose
-Seattle
-Dallas
-Chicago
-Tulsa
-DC
-Burbank
-    
-8 INSTRUCTORS
-Michael
-Amy
-Eduardo
-Josh
-Graham
-Patrick
-Minh
-Devon
-
-
-
+iterateDictionary2('last_name', students)
