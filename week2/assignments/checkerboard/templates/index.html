@@ -10,8 +10,22 @@
     color1{
         background-color: {{color1}};
     }
+    color2{
+        background-color: {{color2}};
+    }
 </style>
 <body>
-    
+    <div class="box">
+        <h1 id="header">Checkerboard</h1>
+        <table>
+            {% for r in range(x) %}
+            <tr>
+                {% for c in range(y) %}
+                <td class = "color{{(i+j)%2+1}}"></td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>
