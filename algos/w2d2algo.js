@@ -27,9 +27,21 @@ const expected5 = "ba"
  * @param {string} str A string that may contain duplicates.
  * @returns {string} The given string with any duplicate characters removed.
  */
-function stringDedupe(str) {
-    //Your code here
+
+ function stringDedupe(str) {
+    let distinctStr = "";
+    const seen = {};
+
+    // loop backwards to include last occurrence
+    for (let i = str.length - 1; i >= 0; --i) {
+        if (!seen[str[i]]) {
+            distinctStr = str[i] + distinctStr;
+            seen[str[i]] = true;
+        }
+    }
+    return distinctStr;
 }
+
 
 console.log(stringDedupe(str1));
 console.log(stringDedupe(str2));
@@ -63,7 +75,19 @@ const expectedC = "cba fed ihg";
  * @returns {string} The given string with each word's letters reversed.
  */
 function reverseWords(str) {
-    //Your code here
+    let reversed = "";
+    let temp = ""
+    for (let char of str){
+        if (char == " "){
+            reversed += temp + " "
+            temp = ""
+        } else {
+            temp = char + temp
+        }
+    }
+    //capture last word
+    reversed += temp;
+    return reversed
 }
 
 console.log(reverseWords(strA)) //expectedA: olleh

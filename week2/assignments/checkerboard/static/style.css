@@ -1,0 +1,22 @@
+.box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+.color1 {
+    background-color: red;
+    height: 20px;
+    width: 20px;
+}
+
+.color2 {
+    background-color: black;
+    height: 20px;
+    width: 20px;
+}
