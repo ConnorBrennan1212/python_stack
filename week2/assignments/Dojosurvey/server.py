@@ -7,6 +7,9 @@ info ={
 
 locations = ["Chicago", "Seattle", "Online", "Burbank"]
 language = [{"Python"}, {"C#"}, {"javascript"}, {"css"}, {"html"}]
+submissions = {
+    
+}
 
 
 @app.route('/')
