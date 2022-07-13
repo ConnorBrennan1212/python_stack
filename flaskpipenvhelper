@@ -1,0 +1,25 @@
+#step 1 create project folder
+#step 2 create server.py
+#step 3 paste the following
+
+
+from flask import Flask, render_template #redirect, session
+app=Flask(__name__)
+
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
+    app.run(debug=True)
+
+#step 4 within the project folder install pipenv (pip install pipenv)
+#step 5 go into pip env (pipenv shell)
+#step 6 (pipenv install flask)
+# step 7 run your server (python server.py)
+# 
+#to get out of your server ctrl+c
+# 
+# to get out of your shell type exit 
