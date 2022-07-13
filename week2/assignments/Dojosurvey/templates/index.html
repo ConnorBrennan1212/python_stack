@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Dojo Survey</h1>
+    <h2>Name</h2>
+    <input type="text">
+    <h2>Dojo Location</h2>
+    <select name="locations" id="locations">
+            {%for l in location%}
+            <option value="{{locations}}">
+                {{locations}}
+            </option>
+            {%endfor%}
+    </select>
+    <h2>Favorite Language</h2>
+    <select name="language" id="language">
+        {%for j in language: %}
+        <option value="{{language}}">
+            {{language}}
+        </option>
+        {%endfor%}
+    </select>
+    <h2>Comments</h2>
+    <input type="text">
+
+</body>
+</html>

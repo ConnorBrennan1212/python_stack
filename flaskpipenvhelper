@@ -15,7 +15,7 @@ def index():
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
     app.run(debug=True)
 
-#step 4 within the project folder install pipenv (pip install pipenv)
+#step 4 (only first time on the drive) within the project folder install pipenv (pip install pipenv)
 #step 5 go into pip env (pipenv shell)
 #step 6 (pipenv install flask)
 # step 7 run your server (python server.py)
