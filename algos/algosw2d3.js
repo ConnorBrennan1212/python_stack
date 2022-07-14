@@ -69,26 +69,33 @@ const expectedC = false;
  * @param {string} str
  * @returns {boolean} Whether the given strings braces are valid.
  */
-function bracesValid(str) {
-    let stack = [];
-    let open = "([{";
-    let closedToOpen = { ')':'(', '}':'{', ']':'['};
-
-    for(let char of str)
-        if(opens.includes(char)){
-            stack.push(char)
-        }
-        else if(closedToOpen[char]){
-            if (closedToOpen[char] == stack[stack.length-1]){
-                stack.pop();
-                else{
-                    return false;
-                }
-            }
-        }
-        return stack.length == 0
-
+ function parensValid(str) {
+    let unmatchedOpens = 0;
+    for (let char of str){
+        if (char == "(") unmatchedOpens++
+        if (char == ")") unmatchedOpens--
+        if (unmatchedOpens < 0) return false
+    }
+    return unmatchedOpens == 0;
 }
+
+function bracesValid(str) {
+    const stack = [];
+    const opens = "({[";
+    const closeToOpen = { ")": "(", "}": "{", "]": "[" };
+
+    for (let char of str) {
+    if (opens.includes(char)) {
+        stack.push(char);
+    } else if (closeToOpen[char]) {
+        if (closeToOpen[char] === stack[stack.length - 1]) {
+        stack.pop();
+        } else {
+        return false;
+        }
+    }
+    }
+    return stack.length === 0;
 console.log(bracesValid(strA)) // expected: true
 console.log(bracesValid(strB)) // expected: false
 console.log(bracesValid(strC)) // expected: false
