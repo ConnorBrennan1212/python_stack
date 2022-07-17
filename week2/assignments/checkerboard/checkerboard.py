@@ -3,27 +3,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def checkerboard():
-    x=8
-    y=8
-    color1 = 'red'
-    color2 = 'black'
-    return render_template("index.html", x = x, y=y, color1=color1, color2=color2)
+    return render_template("index.html", x = 8, y=8, color1='red', color2='black')
 
 @app.route('/<int:x>')
 def checkerboardwidth(x):
-    x = int(x)
-    y=8
-    color1='red'
-    color2='black'
-    return render_template("index.html", x=x, y=y, color1=color1, color2 = color2)
+    return render_template("index.html", x=x, y=8, color1='red', color2 = 'black')
 
 @app.route('/<int:x>/<int:y>')
-def checkerboardwandh(x,y):
-    x = int(x)
-    y = int(y)
-    color1='red'
-    color2='black'
-    return render_template("index.html", x=x, y=y, color1=color1, color2 = color2)
+def checkerboard_w_and_h(x,y):
+
+    return render_template("index.html", x=x, y=y, color1='red', color2 = 'black')
+
 
 
 if __name__ == '__main__':
