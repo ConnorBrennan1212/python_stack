@@ -40,7 +40,7 @@ def iterateDictionary(students):
         names = ""
         # print(list)
         for x, y in students[list].items():
-            names += f"{x}+{y}"
+            names += f"{x} - {y}"
         print(names)
 
 
@@ -55,8 +55,8 @@ iterateDictionary(students)
 # first_name - KB, last_name - Tonel
 
 def iterateDictionary2(key_name, some_list):
-    for list in range(len(some_list)):
-        for x, y in some_list[list].items():
+    for dict in range(len(some_list)):
+        for x, y in some_list[dict].items():
             if key_name == x:
                 print(y)
 
