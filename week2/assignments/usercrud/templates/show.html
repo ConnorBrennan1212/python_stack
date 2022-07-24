@@ -7,7 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>All Users</h1>
-    <a href="http://">Add a New User</a>
+    <h1 class="text-center">Here are our users</h1>
+    <table>
+    <thead>
+        <tr>
+            <tr>ID</tr>
+            <tr>Full Name</tr>
+            <tr>Email</tr>
+            <tr>Created At</tr>
+        </tr>
+    </thead>
+    <tbody>
+        {%for user in users%}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}}+ ' ' + {{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.created_at}}</td>
+            <td>
+                <a href="/user/show/{{user.id}}">Show</a>
+                <a href="/user/edit/{{user.id}}">Edit</a>
+                <a href="/user/delete/{{user.id}}">Delete</a>
+            </td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+<a href="/user/new">Add a User</a>
 </body>
 </html>
