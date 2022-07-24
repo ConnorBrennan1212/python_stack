@@ -1,0 +1,34 @@
+INSERT INTO `dojosandninjas`.`dojos` (`name`) VALUES ('Cali');
+INSERT INTO `dojosandninjas`.`dojos` (`name`) VALUES ('Arizona');
+INSERT INTO `dojosandninjas`.`dojos` (`name`) VALUES ('Kansas');
+
+
+Delete from dojos where id = 1
+Delete from dojos where id = 2
+Delete from dojos where id = 3
+
+
+INSERT INTO `dojosandninjas`.`dojos` (`name`) VALUES ('Texas');
+INSERT INTO `dojosandninjas`.`dojos` (`name`) VALUES ('OK');
+INSERT INTO `dojosandninjas`.`dojos` (`name`) VALUES ('AK');
+INSERT INTO `dojosandninjas`.`ninjas` (`first_name`, `last_name`, `age`, `Dojos_id`) VALUES ('Connor', 'Brennan', '26', '8');
+INSERT INTO `dojosandninjas`.`ninjas` (`first_name`, `last_name`, `age`, `Dojos_id`) VALUES ('Tom', 'Jefferson', '29', '8');
+INSERT INTO `dojosandninjas`.`ninjas` (`first_name`, `last_name`, `age`, `Dojos_id`) VALUES ('Jim', 'Dean', '24', '8');
+INSERT INTO `dojosandninjas`.`ninjas` (`first_name`, `last_name`, `age`, `Dojos_id`) VALUES ('David', 'Brennan', '26', '9');
+INSERT INTO `dojosandninjas`.`ninjas` (`first_name`, `last_name`, `age`, `Dojos_id`) VALUES ('Bill', 'Jefferson', '29', '9');
+INSERT INTO `dojosandninjas`.`ninjas` (`first_name`, `last_name`, `age`, `Dojos_id`) VALUES ('James', 'Dean', '24', '9');
+INSERT INTO `dojosandninjas`.`ninjas` (`first_name`, `last_name`, `age`, `Dojos_id`) VALUES ('Nell', 'Brennan', '26', '10');
+INSERT INTO `dojosandninjas`.`ninjas` (`first_name`, `last_name`, `age`, `Dojos_id`) VALUES ('Joyce', 'Jefferson', '29', '10');
+INSERT INTO `dojosandninjas`.`ninjas` (`first_name`, `last_name`, `age`, `Dojos_id`) VALUES ('Mary', 'Dean', '24', '10');
+
+
+SELECT * From ninjas
+where Dojos_id = 8
+
+SELECT * From ninjas
+where Dojos_id = 10
+
+SELECT * From ninjas
+where id = 9
+
+
