@@ -14,7 +14,9 @@
             <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
         {% endfor %}
     {% endif %}
-{% endwith %}
+    {% endwith %}
+
+    {{session['user_id']}}
 
     <div id="register">
         <h1>Register</h1>

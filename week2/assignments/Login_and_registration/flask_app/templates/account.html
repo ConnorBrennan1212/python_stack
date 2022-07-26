@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>User {{first_name}}</h1>
-    <button type="submit">Log Out</button>
+    <h1>{{session['first_name']}}</h1>
+    <a href="/logout">Log out</a>
 </body>
 </html>

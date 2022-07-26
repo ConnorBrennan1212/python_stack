@@ -30,3 +30,40 @@ def register_user():
         print('validation fails')
     #create the user in database
     return redirect('/')
+
+@app.route('/users/login', methods=['POST'])
+def login_user():
+    users = User.get_user_by_email({'email': request.form['email']})
+
+    if len(users) != 1:
+        flash('email or password incorrect')
+        return redirect('/')
+
+    user = users[0]
+
+    if not bcrypt.check_password_hash(user.password, request.form['password']):
+        flash('username or password incorrect')
+        return redirect('/')
+
+    session['user_id'] = user.id
+    session['email'] = user.email
+    session['first_name'] = user.first_name
+    session['last_name'] = user.last_name
+
+
+    print('log in ok')
+
+    return redirect('/success')
+
+@app.route('/success')
+def success():
+    if 'user_id' not in session:
+        flash('log in to view')
+        return redirect('/')
+    return render_template('account.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash("logged out")
+    return redirect('/')
