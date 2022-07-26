@@ -24,6 +24,18 @@ class User:
         result = connectToMySQL('login').query_db(query,data)
         return result
 
+    @classmethod
+    def get_user_by_email(cls,data):
+        query = "SELECT * FROM users WHERE email = %(email)s"
+
+        results = connectToMySQL('login').query_db(query,data)
+
+        users = []
+
+        for row in results:
+            users.append(User(row))
+
+        return users
 
 
     @staticmethod
@@ -42,6 +54,9 @@ class User:
         if not EMAIL_REGEX.match(data['email']):
             is_valid = False
             flash('email address must be in correct format')
+        if len(User.get_user_by_email(data)) != 0:
+            is_valid = False
+            flash("email is already in use")
         #password
         if len(data['password'])<8:
             is_valid = False
